@@ -1,0 +1,9 @@
+[user]
+        name = Kirill Pavlov
+        email = kirill.pavlov@phystech.edu
+
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
