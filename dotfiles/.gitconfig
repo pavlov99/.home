@@ -1,6 +1,6 @@
 [user]
-	name = __GIT_NAME__
-	email = __GIT_EMAIL__
+	name = "Kirill Pavlov"
+	email = kirill.pavlov@phystech.edu
 
 [color]
 	ui = true
