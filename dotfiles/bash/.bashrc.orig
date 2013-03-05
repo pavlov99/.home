@@ -11,8 +11,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # login picture
 cat $HOME/.home/dotfiles/bash/cowsay/pony.cow
 
-export DEBFULLNAME="Kirill Pavlov"
-export DEBEMAIL="kirill.pavlov@phystech.edu"
+export DEBFULLNAME="__BASH_DEBFULLNAME__"
+export DEBEMAIL="__BASH_DEBEMAIL__"
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
 export LANG="en_US.UTF-8"
 
