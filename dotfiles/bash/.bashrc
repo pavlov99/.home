@@ -94,3 +94,7 @@ fi
 # Completion
 source $HOME/.home/dotfiles/bash/completion/git-completion.bash
 source $HOME/.home/dotfiles/bash/completion/git-flow-completion.bash
+source $HOME/.home/dotfiles/bash/completion/gem-completion.bash
+source $HOME/.home/dotfiles/bash/completion/vagrant-completion.bash
+source $HOME/.home/dotfiles/bash/completion/knife-completion.bash
+source $HOME/.home/dotfiles/bash/completion/rabbitmq-completion.bash
