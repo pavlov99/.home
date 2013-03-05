@@ -30,3 +30,11 @@
 	editor = vim
 	filemode = true
 	whitespace = fix,trailing-space,space-before-tab,-indent-with-non-tab,cr-at-eol
+
+[alias]
+	; list aliases
+	alias = !git config --get-regexp alias | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
