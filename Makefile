@@ -1,5 +1,5 @@
-all: $(HOME)/.bashrc $(HOME)/.bash_aliases $(HOME)/.bash_profile $(HOME)/.gitconfig $(HOME)/.hgrc
-	@echo "build"
+all: clean $(HOME)/.bashrc $(HOME)/.bash_aliases $(HOME)/.bash_profile $(HOME)/.gitconfig $(HOME)/.hgrc
+	@echo "build is finished"
 
 $(HOME)/.bashrc:
 	ln -s $(CURDIR)/dotfiles/bash/.bashrc $(HOME)/.
