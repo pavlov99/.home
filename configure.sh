@@ -19,7 +19,7 @@ function get_placeholder_files {
     # return list of files containing placeholders $@
     # exclude .git folder and current file
 
-    find . -path ./.git -prune -o -not -name $(basename $0) -type f \
+    find . -type f -not -regex './.git.*' -and -not -name $(basename $0) \
 	| xargs egrep -lr $(echo $@ | tr ' ' '|')
 }
 
@@ -27,7 +27,7 @@ function get_replace_expression {
     # return expression to pass to sed for replacement based on argument list
     expression=""
     for placeholder in $@; do
-	expression=$expression";s/$placeholder/${!placeholder}/g"
+	expression=$expression"s/$placeholder/${!placeholder}/g;"
     done
     echo $expression
 }
@@ -36,8 +36,9 @@ function replace_placeholders {
     echo 123
 }
 
-# replace_files_with_orig
-# get_placeholder_files $placeholders
-
+replace_files_with_orig
 replace_expression=$(get_replace_expression $placeholders)
-echo $replace_expression
+
+for config_file in $(get_placeholder_files $placeholders); do
+    sed -i.orig "$replace_expression" $config_file
+done
