@@ -87,3 +87,7 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# Completion
+source $HOME/.home/dotfiles/bash/completion/git-completion.bash
+source $HOME/.home/dotfiles/bash/completion/git-flow-completion.bash
