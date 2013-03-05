@@ -24,7 +24,7 @@ alias l='ls -CF'
 # deb packages
 alias dch='dch --distributor=debian'
 alias debinstall='sudo apt-get install --reinstall'
-alias debinfo='apt-cash policy'
+alias debinfo='apt-cache policy'
 alias debclean='sudo apt-get autoremove && sudo apt-get autoclean'
 alias debremove='sudo apt-get remove --purge'
 alias debsearch='apt-cache search'
