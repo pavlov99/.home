@@ -99,3 +99,4 @@ source $HOME/.home/dotfiles/bash/completion/vagrant-completion.bash
 source $HOME/.home/dotfiles/bash/completion/knife-completion.bash
 source $HOME/.home/dotfiles/bash/completion/rabbitmq-completion.bash
 source $HOME/.home/dotfiles/bash/completion/gpg-completion.bash
+source $HOME/.home/dotfiles/bash/completion/django-completion.bash
