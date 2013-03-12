@@ -22,7 +22,7 @@ alias la='ls -lah'
 alias l='ls -CF'
 
 # deb packages
-alias dch='dch --distributor=debian'
+# alias dch='dch --distributor=debian'  # brakes dch in some cases
 alias debinstall='sudo apt-get install --reinstall'
 alias debinfo='apt-cache policy'
 alias debclean='sudo apt-get autoremove && sudo apt-get autoclean'
