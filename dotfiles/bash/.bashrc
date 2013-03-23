@@ -9,7 +9,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # login picture
-cat $HOME/.home/dotfiles/bash/cowsay/pony.cow
+# cat $HOME/.home/dotfiles/bash/cowsay/pony.cow
 
 export DEBFULLNAME="Kirill Pavlov"
 export DEBEMAIL="kirill.pavlov@phystech.edu"
