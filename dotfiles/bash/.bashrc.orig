@@ -9,7 +9,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # login picture
-cat $HOME/.home/dotfiles/bash/cowsay/pony.cow
+# cat $HOME/.home/dotfiles/bash/cowsay/pony.cow
 
 export DEBFULLNAME="__BASH_DEBFULLNAME__"
 export DEBEMAIL="__BASH_DEBEMAIL__"
@@ -78,6 +78,11 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+# Bash login
+if [ -f ~/.bash_login ]; then
+    . ~/.bash_login
+fi
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
