@@ -50,7 +50,7 @@ function get_free_memory_info {
     if [[ $(uname) == "Linux" ]]; then
         get_free_memory_info_ubuntu
     elif [[ $(uname) == "Darwin" ]]; then
-        get_free_memory_info_ubuntu
+        get_free_memory_info_macos
     else
         echo ""
     fi
