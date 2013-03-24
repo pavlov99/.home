@@ -79,6 +79,11 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Bash login
+if [ -f ~/.bash_login ]; then
+    . ~/.bash_login
+fi
+
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
