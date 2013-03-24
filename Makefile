@@ -26,6 +26,7 @@ $(HOME)/.hgrc:
 
 clean:
 	rm -rf $(HOME)/.bash_aliases
+	rm -rf $(HOME)/.bash_login
 	rm -rf $(HOME)/.bash_logout
 	rm -rf $(HOME)/.bash_profile
 	rm -rf $(HOME)/.bashrc
