@@ -60,7 +60,8 @@ echo -e "\n"$(date)" | Bash "${BASH_VERSION%.*}" | Server IP: "$(get_ip_address)
 get_system_core_name
 echo -e "Uptime:"$(uptime)
 echo -e "Login users:\t"$(users)
-echo "Disk "$(get_free_disk_space_info)" | Mem "$(get_free_memory_info)
+echo -e "Disk\t\t"$(get_free_disk_space_info)
+echo -e "Memory\t\t"$(get_free_memory_info)
 
 # cat /proc/cpuinfo | grep "model name" | cut -d:  -f2 | cut -d" " -f2- | uniq -c # ubuntu
 # sudo lshw # ubuntu show hardware info
