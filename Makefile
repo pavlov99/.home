@@ -1,4 +1,6 @@
-all: clean $(HOME)/.bashrc $(HOME)/.bash_aliases $(HOME)/.bash_profile $(HOME)/.gitconfig $(HOME)/.hgrc
+all: clean $(HOME)/.bashrc $(HOME)/.bash_aliases $(HOME)/.bash_profile \
+        $(HOME)/.bash_login $(HOME)/.bash_logout $(HOME)/.gitconfig \
+        $(HOME)/.hgrc
 	@echo "build is finished"
 
 $(HOME)/.bashrc:
@@ -12,6 +14,9 @@ $(HOME)/.bash_profile:
 
 $(HOME)/.bash_logout:
 	ln -s $(CURDIR)/dotfiles/bash/.bash_logout $(HOME)/.
+
+$(HOME)/.bash_login:
+	ln -s $(CURDIR)/dotfiles/bash/.bash_login $(HOME)/.
 
 $(HOME)/.gitconfig:
 	ln -s $(CURDIR)/dotfiles/.gitconfig $(HOME)/.
