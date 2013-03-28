@@ -1,10 +1,19 @@
-all: clean $(HOME)/.bashrc $(HOME)/.bash_aliases $(HOME)/.bash_profile \
-        $(HOME)/.bash_login $(HOME)/.bash_logout $(HOME)/.gitconfig \
-        $(HOME)/.hgrc
+USERNAME := "Kirill Pavlov"
+EMAIL := "kirill.pavlov@phystech.edu"
+
+__BASH_DEBFULLNAME__ := $(USERNAME)
+__BASH_DEBEMAIL__ := $(EMAIL)
+__GIT_NAME__ := $(USERNAME)
+__GIT_EMAIL__ := $(EMAIL)
+
+
+all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc
 	@echo "build is finished"
 
 $(HOME)/.bashrc:
-	ln -s $(CURDIR)/dotfiles/bash/.bashrc $(HOME)/.
+	cat dotfiles/bash/.bashrc \
+	    | sed "s/__BASH_DEBFULLNAME__/"$(__BASH_DEBFULLNAME__)"/g" \
+	    | sed "s/__BASH_DEBEMAIL__/"$(__BASH_DEBEMAIL__)"/g" > $(HOME)/.bashrc
 
 $(HOME)/.bash_aliases:
 	ln -s $(CURDIR)/dotfiles/bash/.bash_aliases $(HOME)/.
@@ -18,8 +27,13 @@ $(HOME)/.bash_logout:
 $(HOME)/.bash_login:
 	ln -s $(CURDIR)/dotfiles/bash/.bash_login $(HOME)/.
 
+bash: $(HOME)/.bashrc $(HOME)/.bash_aliases $(HOME)/.bash_login \
+	$(HOME)/.bash_logout $(HOME)/.bash_profile
+
 $(HOME)/.gitconfig:
-	ln -s $(CURDIR)/dotfiles/.gitconfig $(HOME)/.
+	cat $(CURDIR)/dotfiles/.gitconfig \
+	    | sed "s/__GIT_NAME__/"$(__GIT_NAME__)"/g" \
+	    | sed "s/__GIT_EMAIL__/"$(__GIT_EMAIL__)"/g" > $(HOME)/.gitconfig
 
 $(HOME)/.hgrc:
 	ln -s $(CURDIR)/dotfiles/.hgrc $(HOME)/.
