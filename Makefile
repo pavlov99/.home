@@ -30,6 +30,11 @@ $(HOME)/.bash_login:
 bash: $(HOME)/.bashrc $(HOME)/.bash_aliases $(HOME)/.bash_login \
 	$(HOME)/.bash_logout $(HOME)/.bash_profile
 
+vim:
+	rm -rf $(HOME)/.vim
+	git clone git@github.com:pavlov99/.vim.git $(HOME)/.vim
+	cd  $(HOME)/.vim && make && make install
+
 $(HOME)/.gitconfig:
 	cat $(CURDIR)/dotfiles/.gitconfig \
 	    | sed "s/__GIT_NAME__/"$(__GIT_NAME__)"/g" \
