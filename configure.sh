@@ -32,10 +32,6 @@ function get_replace_expression {
     echo $expression
 }
 
-function replace_placeholders {
-    echo 123
-}
-
 replace_files_with_orig
 replace_expression=$(get_replace_expression $placeholders)
 
