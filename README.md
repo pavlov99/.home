@@ -1,5 +1,5 @@
 # .home
-My home configuration files
+My home configuration files. To configure .home use Makefile placeholders
 
 ## Installation
 
