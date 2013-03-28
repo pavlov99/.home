@@ -1,0 +1,3 @@
+[submodule "dotfiles/.smartcd"]
+	path = dotfiles/.smartcd
+	url = git://github.com/cxreg/smartcd.git
