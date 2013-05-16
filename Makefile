@@ -1,6 +1,8 @@
 USERNAME := "Kirill Pavlov"
 EMAIL := "kirill.pavlov@phystech.edu"
 
+__BASH_USERNAME__ := $(USERNAME)
+__BASH_EMAIL__ := $(EMAIL)
 __BASH_DEBFULLNAME__ := $(USERNAME)
 __BASH_DEBEMAIL__ := $(EMAIL)
 __GIT_NAME__ := $(USERNAME)
@@ -13,6 +15,8 @@ all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/.smartcd
 
 $(HOME)/.bashrc:
 	cat dotfiles/bash/.bashrc \
+	    | sed "s/__BASH_USERNAME__/"$(__BASH_USERNAME__)"/g" \
+	    | sed "s/__BASH_EMAIL__/"$(__BASH_EMAIL__)"/g" \
 	    | sed "s/__BASH_DEBFULLNAME__/"$(__BASH_DEBFULLNAME__)"/g" \
 	    | sed "s/__BASH_DEBEMAIL__/"$(__BASH_DEBEMAIL__)"/g" > $(HOME)/.bashrc
 

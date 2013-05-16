@@ -13,6 +13,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export DEBFULLNAME="__BASH_DEBFULLNAME__"
 export DEBEMAIL="__BASH_DEBEMAIL__"
+export USERNAME="__BASH_USERNAME__"
+export EMAIL="__BASH_EMAIL__"
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
 export LANG="en_US.UTF-8"
 
