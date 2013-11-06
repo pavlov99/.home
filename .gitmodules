@@ -1,3 +1,0 @@
-[submodule "lib/.smartcd"]
-	path = lib/.smartcd
-	url = https://github.com/cxreg/smartcd.git
