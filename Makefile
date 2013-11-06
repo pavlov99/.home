@@ -9,7 +9,7 @@ __GIT_NAME__ := $(USERNAME)
 __GIT_EMAIL__ := $(EMAIL)
 
 
-all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/.smartcd
+all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/.smartcd $(HOME)/bin
 	@git submodule init && git submodule update
 	@echo "build is finished"
 
@@ -50,6 +50,10 @@ $(HOME)/.hgrc:
 
 $(HOME)/.smartcd:
 	cp -r $(CURDIR)/dotfiles/.smartcd $(HOME)/.
+
+$(HOME)/bin:
+	mkdir -p $(HOME)/bin
+	cp -r $(CURDIR)/bin/* $(HOME)/bin
 
 clean:
 	rm -rf $(HOME)/.bash_aliases
