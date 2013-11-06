@@ -8,6 +8,9 @@ __BASH_DEBEMAIL__ := $(EMAIL)
 __GIT_NAME__ := $(USERNAME)
 __GIT_EMAIL__ := $(EMAIL)
 
+BINDIR=$(CURDIR)/bin
+CONFIGDIR=$(CURDIR)/configs
+
 
 all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/.smartcd $(HOME)/bin
 	@git submodule init && git submodule update
@@ -53,7 +56,11 @@ $(HOME)/.smartcd:
 
 $(HOME)/bin:
 	mkdir -p $(HOME)/bin
-	cp -r $(CURDIR)/bin/* $(HOME)/bin
+	cp -r $(BINDIR)/* $(HOME)/bin
+
+$(HOME)/.smartcd:
+	@echo "Setup smartcd configuration"
+	cp -r $(CONFIGDIR)/smartcd $(HOME)/.smartcd
 
 clean:
 	rm -rf $(HOME)/.bash_aliases
