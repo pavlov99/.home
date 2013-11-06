@@ -51,9 +51,6 @@ $(HOME)/.gitconfig:
 $(HOME)/.hgrc:
 	ln -s $(CURDIR)/dotfiles/.hgrc $(HOME)/.
 
-$(HOME)/.smartcd:
-	cp -r $(CURDIR)/dotfiles/.smartcd $(HOME)/.
-
 $(HOME)/bin:
 	mkdir -p $(HOME)/bin
 	cp -r $(BINDIR)/* $(HOME)/bin
