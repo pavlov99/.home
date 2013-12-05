@@ -17,6 +17,7 @@ export USERNAME="__BASH_USERNAME__"
 export EMAIL="__BASH_EMAIL__"
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
 export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
