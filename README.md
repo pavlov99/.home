@@ -8,3 +8,7 @@ My home configuration files. To configure .home use Makefile placeholders
 ## Installation
 
     curl https://raw.github.com/pavlov99/.home/master/install | bash
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pavlov99/.home/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
