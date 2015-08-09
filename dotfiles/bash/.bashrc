@@ -19,6 +19,7 @@ export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export EDITOR=$(which vim)
+export GOPATH=$HOME/go
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
