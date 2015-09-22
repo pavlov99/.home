@@ -23,7 +23,7 @@ export EDITOR=$(which vim)
 export GOPATH=$HOME/go
 
 export ORACLE_VERSION="12.1"
-export ORACLE_HOME="/usr/lib/oracle/$ORACLE_VERSION/client64/"
+export ORACLE_HOME="/usr/lib/oracle/$ORACLE_VERSION/client64"
 export PATH=$PATH:"$ORACLE_HOME/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$ORACLE_HOME/lib"
 
