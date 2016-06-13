@@ -8,6 +8,11 @@
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=/usr/local/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# The next line updates PATH for the Google Cloud SDK.
+[[ -s "$HOME/src/google-cloud-sdk/path.bash.inc" ]] && source $HOME/src/google-cloud-sdk/path.bash.inc
+# The next line enables shell command completion for gcloud.
+[[ -s "$HOME/src/google-cloud-sdk/completion.bash.inc" ]] && source $HOME/src/google-cloud-sdk/completion.bash.inc
 
 # login picture
 # cat $HOME/.home/dotfiles/bash/cowsay/pony.cow
