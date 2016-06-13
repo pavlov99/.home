@@ -12,7 +12,7 @@ BINDIR=$(CURDIR)/bin
 CONFIGDIR=$(CURDIR)/configs
 
 
-all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/.smartcd $(HOME)/bin
+all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/.eslintrc $(HOME)/.smartcd $(HOME)/bin
 	@git submodule init && git submodule update
 	@echo "build is finished"
 
@@ -51,6 +51,9 @@ $(HOME)/.gitconfig:
 $(HOME)/.hgrc:
 	ln -s $(CURDIR)/dotfiles/.hgrc $(HOME)/.
 
+$(HOME)/.eslintrc:
+	ln -s $(CURDIR)/dotfiles/.eslintrc $(HOME)/.
+
 $(HOME)/bin:
 	mkdir -p $(HOME)/bin
 	cp -r $(BINDIR)/* $(HOME)/bin
@@ -67,4 +70,5 @@ clean:
 	rm -rf $(HOME)/.bashrc
 	rm -rf $(HOME)/.gitconfig
 	rm -rf $(HOME)/.hgrc
+	rm -rf $(HOME)/.eslintrc
 	rm -rf $(HOME)/.smartcd
