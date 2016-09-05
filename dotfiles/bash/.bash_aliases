@@ -20,6 +20,7 @@ function trash () {
 alias ls='ls -FG'
 alias la='ls -lah'
 alias l='ls -CF'
+alias lstree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 
 # deb packages
 # alias dch='dch --distributor=debian'  # brakes dch in some cases
