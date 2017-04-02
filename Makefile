@@ -1,5 +1,5 @@
 USERNAME := "Kirill Pavlov"
-EMAIL := "kirill.pavlov@phystech.edu"
+EMAIL := "k@p99.io"
 
 __BASH_USERNAME__ := $(USERNAME)
 __BASH_EMAIL__ := $(EMAIL)
