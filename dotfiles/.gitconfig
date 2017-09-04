@@ -19,6 +19,7 @@
         st = status -sb
         br = branch
         mg = merge --no-ff
+        lg = git log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)%an<%ae>%Creset' --abbrev-commit --date=iso --branches
 
         ; Git flow support
         hotfix = flow hotfix
