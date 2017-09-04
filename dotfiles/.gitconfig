@@ -14,18 +14,12 @@
 	alias = !git config --get-regexp alias | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
 
         ; Common
-        co = checkout
-        ci = commit
         st = status -sb
         br = branch
-        mg = merge --no-ff
         lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)%an<%ae>%Creset' --abbrev-commit --date=iso --branches
+        f = !git fetch --all --tags --verbose && git remote --verbose update --prune
+        who = !git log --format='%aN <%aE>' | awk '{arr[$0]++} END{for (i in arr){print arr[i], i}}' | sort -rn
 
-        ; Git flow support
-        hotfix = flow hotfix
-        feature = flow feature
-        release = flow release
-            
         ; Undo
         amend = commit --amend -C HEAD
         undo = reset --soft HEAD^
