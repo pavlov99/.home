@@ -20,6 +20,11 @@
         f = !git fetch --all --tags --verbose && git remote --verbose update --prune
         who = !git log --format='%aN <%aE>' | awk '{arr[$0]++} END{for (i in arr){print arr[i], i}}' | sort -rn
 
+        # git change-commits GIT_COMMITTER_NAME "old name" "new name"
+        change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+        # from https://help.github.com/articles/remove-sensitive-data
+        remove-file = "!f() { git filter-branch -f --index-filter \"git rm --cached --ignore-unmatch $1\" --prune-empty --tag-name-filter cat -- --all; }; f"
+
         ; Undo
         amend = commit --amend -C HEAD
         undo = reset --soft HEAD^
