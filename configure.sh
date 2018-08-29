@@ -1,6 +1,11 @@
 #!/bin/bash
+# Configure shell settings including environment variables.
+# the file introspects itself for
+# <underscore><underscore>settings<underscore><underscore> variables and
+# replaces such placeholders with defined values. If you would like to change
+# your email, change it here and reconfigure project.
 USERNAME="Kirill Pavlov"
-EMAIL="kirill.pavlov@phystech.edu"
+EMAIL="k@p99.io"
 
 __BASH_DEBFULLNAME__=$USERNAME
 __BASH_DEBEMAIL__=$EMAIL
