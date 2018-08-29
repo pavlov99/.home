@@ -9,6 +9,9 @@
 	filemode = true
 	whitespace = fix,trailing-space,space-before-tab,-indent-with-non-tab,cr-at-eol
 
+[commit]
+        gpgSign = true
+
 [alias]
 	; list aliases
 	alias = !git config --get-regexp alias | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
