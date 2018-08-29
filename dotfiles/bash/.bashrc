@@ -6,7 +6,7 @@
 [ -z "$PS1" ] && return
 
 # Add RVM to PATH for scripting
-PATH=/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.rvm/bin
+PATH=$HOME/.cargo/bin:$GOPATH/bin:$HOME/.rvm/bin:/usr/local/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # The next line updates PATH for the Google Cloud SDK.
