@@ -1,12 +1,12 @@
-# Copyleft: Kirill Pavlov kirill.pavlov@phystech.edu
+# Copyleft: Kirill Pavlov kirk.spicy@gmail.com
 
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=/usr/local/bin:$PATH
+# Add RVM to PATH for scripting
+PATH=/usr/local/bin:$PATH:$GOPATH/bin:$HOME/.rvm/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # The next line updates PATH for the Google Cloud SDK.
