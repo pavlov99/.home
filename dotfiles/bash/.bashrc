@@ -26,10 +26,11 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export EDITOR=$(which vim)
 export GOPATH=$HOME/go
+export GPG_TTY=$(tty)
 
 export ORACLE_VERSION="12.1"
 export ORACLE_HOME="/usr/lib/oracle/$ORACLE_VERSION/client64"
-export PATH=$PATH:"$ORACLE_HOME/bin"
+export PATH=$PATH:"$ORACLE_HOME/bin:$HOME/.cargo/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$ORACLE_HOME/lib"
 
 # don't put duplicate lines or lines starting with space in the history.
