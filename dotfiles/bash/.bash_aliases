@@ -32,6 +32,7 @@ alias debsearch='apt-cache search'
 alias debupdate='sudo apt-get update && sudo apt-get upgrade'
 
 alias vi='vim'
+alias pbcopy='xclip -sel clip'
 
 # Color ls
 if [ -x /usr/bin/dircolors ]; then
