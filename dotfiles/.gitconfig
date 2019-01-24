@@ -2,6 +2,7 @@
 	name = "__GIT_NAME__"
 	email = __GIT_EMAIL__
         editor = vim
+        signingKey = FF5281C81A3E5B2BE6218E11EA2333137B65AAC5
 
 [core]
 	autocrlf = input
