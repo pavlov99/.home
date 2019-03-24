@@ -12,8 +12,7 @@ BINDIR=$(CURDIR)/bin
 CONFIGDIR=$(CURDIR)/configs
 
 
-all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/.smartcd $(HOME)/bin
-	@git submodule init && git submodule update
+all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/bin
 	@echo "build is finished"
 
 $(HOME)/.bashrc:
@@ -38,11 +37,6 @@ $(HOME)/.bash_login:
 bash: $(HOME)/.bashrc $(HOME)/.bash_aliases $(HOME)/.bash_login \
 	$(HOME)/.bash_logout $(HOME)/.bash_profile
 
-vim:
-	rm -rf $(HOME)/.vim
-	git clone git@github.com:pavlov99/.vim.git $(HOME)/.vim
-	cd  $(HOME)/.vim && make && make install
-
 $(HOME)/.gitconfig:
 	cat $(CURDIR)/dotfiles/.gitconfig \
 	    | sed "s/__GIT_NAME__/"$(__GIT_NAME__)"/g" \
@@ -57,10 +51,6 @@ $(HOME)/bin:
 	mkdir -p $(HOME)/bin
 	cp -r $(BINDIR)/* $(HOME)/bin
 
-$(HOME)/.smartcd:
-	@echo "Setup smartcd configuration"
-	cp -r $(CONFIGDIR)/smartcd $(HOME)/.smartcd
-
 clean:
 	rm -rf $(HOME)/.bash_aliases
 	rm -rf $(HOME)/.bash_login
@@ -69,4 +59,4 @@ clean:
 	rm -rf $(HOME)/.bashrc
 	rm -rf $(HOME)/.gitconfig
 	rm -rf $(HOME)/.hgrc
-	rm -rf $(HOME)/.smartcd
+
