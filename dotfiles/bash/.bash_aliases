@@ -1,6 +1,4 @@
-
 # $HOME/.bash_aliases for bash-3.0 (or later)
-
 
 # Common
 alias rm='rm -i'
@@ -22,14 +20,9 @@ alias la='ls -lah'
 alias l='ls -CF'
 alias lstree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 
-# deb packages
-# alias dch='dch --distributor=debian'  # brakes dch in some cases
-alias debinstall='sudo apt-get install --reinstall'
-alias debinfo='apt-cache policy'
-alias debclean='sudo apt-get autoremove && sudo apt-get autoclean'
-alias debremove='sudo apt-get remove --purge'
-alias debsearch='apt-cache search'
-alias debupdate='sudo apt-get update && sudo apt-get upgrade'
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias vi='vim'
 alias pbcopy='xclip -sel clip'
