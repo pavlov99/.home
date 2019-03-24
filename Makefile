@@ -8,11 +8,8 @@ __BASH_DEBEMAIL__ := $(EMAIL)
 __GIT_NAME__ := $(USERNAME)
 __GIT_EMAIL__ := $(EMAIL)
 
-BINDIR=$(CURDIR)/bin
-CONFIGDIR=$(CURDIR)/configs
 
-
-all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc $(HOME)/bin
+all: clean bash $(HOME)/.gitconfig $(HOME)/.hgrc
 	@echo "build is finished"
 
 $(HOME)/.bashrc:
@@ -46,10 +43,6 @@ $(HOME)/.hgrc:
 	cat $(CURDIR)/dotfiles/.hgrc \
 	    | sed "s/__GIT_NAME__/"$(__GIT_NAME__)"/g" \
 	    | sed "s/__GIT_EMAIL__/"$(__GIT_EMAIL__)"/g" > $(HOME)/.hgrc
-
-$(HOME)/bin:
-	mkdir -p $(HOME)/bin
-	cp -r $(BINDIR)/* $(HOME)/bin
 
 clean:
 	rm -rf $(HOME)/.bash_aliases
