@@ -1,63 +1,63 @@
 [user]
-	name = "__GIT_NAME__"
-	email = __GIT_EMAIL__
-        editor = vim
-        signingKey = FF5281C81A3E5B2BE6218E11EA2333137B65AAC5
+    name = "__GIT_NAME__"
+    email = __GIT_EMAIL__
+    editor = vim
+    signingKey = FF5281C81A3E5B2BE6218E11EA2333137B65AAC5
 
 [core]
-	autocrlf = input
-	editor = vim
-	filemode = true
-	whitespace = fix,trailing-space,space-before-tab,-indent-with-non-tab,cr-at-eol
+    autocrlf = input
+    editor = vim
+    filemode = true
+    whitespace = fix,trailing-space,space-before-tab,-indent-with-non-tab,cr-at-eol
 
 [commit]
         gpgSign = true
 
 [alias]
-	; list aliases
-	alias = !git config --get-regexp alias | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+    ; list aliases
+    alias = !git config --get-regexp alias | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
 
-        ; Common
-        st = status -sb
-        br = branch
-        lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)%an<%ae>%Creset' --abbrev-commit --date=iso --branches
-        f = !git fetch --all --tags --verbose && git remote --verbose update --prune
-        who = !git log --format='%aN <%aE>' | awk '{arr[$0]++} END{for (i in arr){print arr[i], i}}' | sort -rn
+    ; Common
+    st = status -sb
+    br = branch
+    lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)%an<%ae>%Creset' --abbrev-commit --date=iso --branches
+    f = !git fetch --all --tags --verbose && git remote --verbose update --prune
+    who = !git log --format='%aN <%aE>' | awk '{arr[$0]++} END{for (i in arr){print arr[i], i}}' | sort -rn
 
-        # git change-commits GIT_COMMITTER_NAME "old name" "new name"
-        change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
-        # from https://help.github.com/articles/remove-sensitive-data
-        remove-file = "!f() { git filter-branch -f --index-filter \"git rm --cached --ignore-unmatch $1\" --prune-empty --tag-name-filter cat -- --all; }; f"
+    # git change-commits GIT_COMMITTER_NAME "old name" "new name"
+    change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+    # from https://help.github.com/articles/remove-sensitive-data
+    remove-file = "!f() { git filter-branch -f --index-filter \"git rm --cached --ignore-unmatch $1\" --prune-empty --tag-name-filter cat -- --all; }; f"
 
-        ; Undo
-        amend = commit --amend -C HEAD
-        undo = reset --soft HEAD^
-        unstage = reset HEAD
+    ; Undo
+    amend = commit --amend -C HEAD
+    undo = reset --soft HEAD^
+    unstage = reset HEAD
 
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 
 [branch "master"]
-	remote = origin
-	merge = refs/heads/master
+    remote = origin
+    merge = refs/heads/master
 
 [color]
-	ui = true
-	interactive = auto
+    ui = true
+    interactive = auto
 
 [color "branch"]
-	current = green
-	local = white
-	remote = red
+    current = green
+    local = white
+    remote = red
 
 [color "diff"]
-	meta = cyan
-	frag = yellow
-	old = red
-	new = green
-	whitespace = red reverse
+    meta = cyan
+    frag = yellow
+    old = red
+    new = green
+    whitespace = red reverse
 
 [color "status"]
-	added = green
-	changed = yellow
-	untracked = red
+    added = green
+    changed = yellow
+    untracked = red
